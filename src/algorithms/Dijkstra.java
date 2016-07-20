@@ -3,7 +3,7 @@ package algorithms;
 /**
  * @author Pedro Daia
  */
-public class FloodFill
+public class Dijkstra
 {
 
     public static final int INFINITY = 99999999;
