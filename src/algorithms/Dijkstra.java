@@ -14,7 +14,7 @@ public class Dijkstra
      * @param adj the adjacency list
      * @return the distances from vertex source to each vertex
      */
-    public static int[] setDistances(final int source,
+    public static int[] getDistances(final int source,
                                     final int[][] adj)
     {
         final int n = adj.length;
@@ -43,6 +43,8 @@ public class Dijkstra
 
             if (curr == -1)
                 break; // the base case, see the comment above the loop
+
+            processed[curr] = true;
 
             // updates distances of the vertices connected by an edge to current vertex
             for (int  i=0; i < n; i++)
