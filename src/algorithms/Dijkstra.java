@@ -1,36 +1,38 @@
 package algorithms;
 
-/**
- * @author Pedro Daia
- */
 public class Dijkstra
 {
 
-    public static final int INFINITY = 99999999;
+    public static final int INFINITY = 999999999;
+
 
     /**
-     * first gotta set the respective distance values between those vertices who are
-     * connected by an edge. The dist from i to j, if they're not connected by an edge,
-     * shall be infinity.
+     * sets the lowest distance (the fastest path in the graph)
+     * from vertex source to all other vertices.
      *
-     * @param source
-     * @param dist
+     * @param source the source vertex
+     * @param adj the adjacency list
+     * @return the distances from vertex source to each vertex
      */
-    public static void dijkstra(final int source,
-                                 final int[][] dist)
+    public static int[] getDistances(final int source,
+                                    final int[][] adj)
     {
-        final boolean[] processed = new boolean[dist.length];
-        final int[] distance = new int[dist.length];
+        final int n = adj.length;
+        final boolean[] processed = new boolean[n];
+        final int[] distance = new int[n];
+        System.arraycopy(adj[source], 0, distance, 0, n);
 
         distance[source] = 0;
         processed[source] = true;
-        System.arraycopy(dist[source], 0, distance, 0, dist.length);
 
+        // "infinite" loop so we can loop until we find no more nodes to process
+        // that is, all nodes are processed or all nodes with a path (a convex component)
         while (true)
         {
+            int min  = INFINITY;
             int curr = -1;
-            int min = INFINITY;
-            for (int i = 0; i < dist.length; i++)
+
+            for (int  i= 0; i <n ; i++)
             {
                 if (!processed[i] && distance[i] < min)
                 {
@@ -38,26 +40,18 @@ public class Dijkstra
                     min = distance[i];
                 }
             }
-            if (curr == -1) break;
+
+            if (curr == -1)
+                break; // the base case, see the comment above the loop
+
             processed[curr] = true;
 
-            // update distances
-            for (int i = 0; i < dist.length; i++)
-            {
-                // set distance from source to i as whichever is smallest,
-                // the current distance from source to i or the current distance
-                // from the current closest vertex plus the distance from this
-                // current vertex to i
-                distance[i] = Math.min(distance[i], distance[curr] + dist[curr][i]);
-                // distance[i] should be infinity if i has no edge to source
-                // then, since we're looking at the current vertex, we update the
-                // distance to the distance to go from source to current and then
-                // the distance to go from current to i, this way we can know if
-                // we should go back to a higher cost move than the one to curr
-                // but that will result in a lower cost total move then if we moved
-                // to curr.
-            }
+            // updates distances of the vertices connected by an edge to current vertex
+            for (int  i=0; i < n; i++)
+                distance[i] = Math.min(distance[i], distance[curr] + adj[curr][i]);
         }
+
+        return distance;
     }
 
 }

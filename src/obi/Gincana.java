@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 /**
  * @author Pedro Daia
+<<<<<<< HEAD
  * OlimpÃ­ada Brasileira de InformÃ¡tica
+=======
+ * Olimpíada Brasileira de Informática
+>>>>>>> origin/master
  */
 public class Gincana
 {
@@ -17,7 +21,11 @@ public class Gincana
     public static void main(String[] args)
     {
         final Scanner s = new Scanner(System.in);
+<<<<<<< HEAD
         n = s.nextInt(); // nÃºmero de alunos
+=======
+        n = s.nextInt(); // número de alunos
+>>>>>>> origin/master
         m = s.nextInt(); // pares de amizades
         arestas = new int[n][n]; // 1 se amigo
         componente = new int[n];
@@ -58,4 +66,8 @@ public class Gincana
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

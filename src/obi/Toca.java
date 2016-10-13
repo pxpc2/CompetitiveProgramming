@@ -99,4 +99,8 @@ public class Toca
         }
     }*/
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

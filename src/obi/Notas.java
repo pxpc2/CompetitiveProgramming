@@ -79,4 +79,8 @@ public class Notas
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
