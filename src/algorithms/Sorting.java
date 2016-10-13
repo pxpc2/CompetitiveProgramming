@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.util.ArrayList;
+
 /**
  * @author Pedro Daia
  */
@@ -77,11 +79,39 @@ public class Sorting
     public static void main(final String[] args)
     {
         final int[] list = {12, 32, 11, 12, 39, 1, 70};
-        int[] sorted = mergeSort(list);
+        /*int[] sorted = mergeSort(list);
         for (int i : sorted)
         {
             System.out.print(i + " ");
+        }*/
+        ArrayList<Integer> a = selectionSort(list);
+        for (int i : a)
+            System.out.println(i);
+    }
+
+
+    private static ArrayList<Integer> selectionSort(int[] arr)
+    {
+        ArrayList<Integer> l = new ArrayList<>();
+        ArrayList<Integer> checked = new ArrayList<>();
+        while (true)
+        {
+            int min = 999999999;
+            if (l.size() == arr.length-1) break;
+            for (int i : arr)
+            {
+                if (!checked.contains(i))
+                {
+                    if (i < min)
+                    {
+                        min = i;
+                    }
+                }
+            }
+            l.add(min);
+            checked.add(min);
         }
+        return l;
     }
 
 
