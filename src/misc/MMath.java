@@ -1,9 +1,9 @@
-package stupid;
+package misc;
 
 /**
  * @author Pedro Daia
  */
-public class Math {
+public class MMath {
 
     /**
      * See 'int add(int, int) , (II)I {method desc asm}'
