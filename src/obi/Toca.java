@@ -8,7 +8,7 @@ import java.util.*;
 public class Toca
 {
     private static int n, m, x, y, xf, yf;
-    private static int[] vx = {0, 1, 0, -1},  vy = {1, 0, -1, 0};
+    private static int[] vx = {0, 1, 0, -1}, vy = {1, 0, -1, 0};
     private static int[][] sala, dist;
 
     public static void main(final String[] args)
@@ -26,7 +26,7 @@ public class Toca
                 sala[nn][mm] = s.nextInt();
                 if (sala[nn][mm] == 2)
                 {
-                    x= nn;
+                    x = nn;
                     y = mm;
                     dist[x][y] = 1;
                 }
@@ -36,8 +36,7 @@ public class Toca
                     xf = nn;
                     yf = mm;
                     dist[nn][mm] = -1;
-                }
-                else
+                } else
                 {
                     dist[nn][mm] = -1;
                 }
@@ -48,7 +47,6 @@ public class Toca
     }
 
     /**
-     *
      * @param x init coord x
      * @param y init coord y
      */
@@ -98,9 +96,4 @@ public class Toca
             }
         }
     }*/
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master

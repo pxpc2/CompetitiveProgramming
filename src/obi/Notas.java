@@ -25,7 +25,8 @@ public class Notas
         System.gc();
 
         final int[] notas = new int[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             notas[i] = Integer.valueOf(stringArray[i]);
         }
 
@@ -77,10 +78,4 @@ public class Notas
         }
         return list;
     }
-
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master

@@ -16,11 +16,7 @@ public class Reuniao
         final Scanner s = new Scanner(System.in);
         final int n = s.nextInt(), m = s.nextInt(); // #cidades, #estradas_q_as_interligam
         final int[][] adj = new int[n][n], dist = new int[n][n];
-<<<<<<< HEAD
         // System.out.println("N: " + n);
-=======
-       // System.out.println("N: " + n);
->>>>>>> origin/master
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 4; j++)
@@ -93,11 +89,7 @@ public class Reuniao
     }
 
     public static int[] getDistancesFrom(final int source,
-<<<<<<< HEAD
                                          final int[][] adj)
-=======
-                                  final int[][] adj)
->>>>>>> origin/master
     {
         final int n = adj.length;
         final boolean[] processed = new boolean[n];
@@ -137,8 +129,4 @@ public class Reuniao
 
 
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master
