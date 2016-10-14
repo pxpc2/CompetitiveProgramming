@@ -17,7 +17,6 @@ public class Gincana
     {
         final Scanner s = new Scanner(System.in);
         n = s.nextInt(); // número de alunos
-        n = s.nextInt(); // n�mero de alunos
         m = s.nextInt(); // pares de amizades
         arestas = new int[n][n]; // 1 se amigo
         componente = new int[n];
