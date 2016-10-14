@@ -18,7 +18,7 @@ public class Colorindo
 
     private static int qt = 0;
 
-    public static void main(final String... args)
+    public static void main(String[] args)
     {
         final Scanner s = new Scanner(System.in);
         n = s.nextInt(); m = s.nextInt();
