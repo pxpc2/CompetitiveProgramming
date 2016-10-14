@@ -13,14 +13,12 @@ public class Tarzan
 {
 
 
-    static Tree[] trees;
-
     public static void main(final String[] args)
     {
         final Scanner s = new Scanner(System.in);
         final int rem = s.nextInt();
         final int D = s.nextInt();
-        trees = new Tree[rem];
+        final Tree[] trees = new Tree[rem];
         for (int i = 0; i < rem; i++)
         {
             trees[i] = new Tree();
@@ -47,7 +45,7 @@ public class Tarzan
             }
         }
         int count = 0;
-        for (Tree tree : trees)
+        for (final Tree tree : trees)
         {
             if (count > 1)
             {
@@ -65,7 +63,7 @@ public class Tarzan
         System.out.println("S");
     }
 
-    private static void dfs(Tree a)
+    private static void dfs(final Tree a)
     {
         for (int i = 0; i < a.neighbours.size(); i++)
         {
