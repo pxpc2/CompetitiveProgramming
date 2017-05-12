@@ -23,31 +23,32 @@ public class Sorting
         int l = 0, r = 0, k = 0; // indexes for each array
         while (l < left.length && r < right.length)
         {
-            if (left[k] <= right[k])
+            if (left[l] <= right[r])
             {
-                result[k] = left[k];
+                result[k] = left[l];
                 l++;
             }
             else
             {
-                result[k] = right[k];
+                result[k] = right[r];
                 r++;
             }
             k++;
-            // check the remaining, which is actually the one
-            // that had the biggest values from the start
-            while (l < left.length)
-            {
-                result[k] = left[l];
-                l++;
-                k++;
-            }
-            while (r < right.length)
-            {
-                result[k] = right[r];
-                r++;
-                k++;
-            }
+        }
+
+        // check the remaining, which is actually the one
+        // that had the biggest values from the start
+        while (l < left.length)
+        {
+            result[k] = left[l];
+            l++;
+            k++;
+        }
+        while (r < right.length)
+        {
+            result[k] = right[r];
+            r++;
+            k++;
         }
         return result;
     }
@@ -79,14 +80,14 @@ public class Sorting
     public static void main(final String[] args)
     {
         final int[] list = {12, 32, 11, 12, 39, 1, 70};
-        /*int[] sorted = mergeSort(list);
+        int[] sorted = mergeSort(list);
         for (int i : sorted)
         {
             System.out.print(i + " ");
-        }*/
-        ArrayList<Integer> a = selectionSort(list);
-        for (int i : a)
-            System.out.println(i);
+        }
+        //ArrayList<Integer> a = selectionSort(list);
+        //for (int i : a)
+         //   System.out.println(i);
     }
 
 
